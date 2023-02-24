@@ -1,14 +1,6 @@
-# Homework 7 - Course Reviews
+Course Reviews
 
-## Authors
-
-* Anushka Shinde - dgs5qm
-* Maria Salamone - mrj3zw
-* Nujha Bhuiyan - juh7az
-
-## Description
-
-This program implements a Course Review Program which allows students to log in with a username and password or create an account if they don't already have one. Once they are logged in, they can submit a review for a class or see the reviews for the class. All the data is stored in a database called "Reviews.sqlite" which contains the tables Courses, Reviews, and Students. The User Interface has a Login and Logout as well as the Main Menu which allows students to submit or view reviews. The program is implemented as a JavaFX GUI Application and so all user interaction happen through the GUI.
+This program implements a  a JavaFX GUI Application of Course Review Program which allows students to log in with a username and password or create an account if they don't already have one. Once they are logged in, they can submit a review for a class or see the reviews for the class. All the data is stored in a database called "Reviews.sqlite" which contains the tables Courses, Reviews, and Students. The User Interface has a Login and Logout as well as the Main Menu which allows students to submit or view reviews. The program is implemented as a JavaFX GUI Application and so all user interaction happen through the GUI.
 
 To build and run the program, a few steps need to be followed. 
 
