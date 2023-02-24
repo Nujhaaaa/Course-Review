@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+
+
+<?import javafx.scene.control.ComboBox?>
+<VBox fx:id="scene" alignment="TOP_CENTER" prefWidth="505.0" prefHeight="620.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.virginia.cs.gui.ReviewsController" style="-fx-background-color: #154c79">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <children>
+        <Label fx:id="reviewsLabel" text="UVA Course Reviews" style="-fx-text-fill: #EEEEE4">
+            <font>
+                <Font name="Constantia" size="29.0"/>
+            </font>
+        </Label>
+        <Button fx:id="logoutButton" visible="false" text="Log Out" onAction="#logOut">
+            <font>
+                <Font name="Constantia" size="16.0"/>
+            </font>
+        </Button>
+        <VBox fx:id="vBox" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20">
+            <children>
+                <Button fx:id="loginButton" text="Login" onAction="#login">
+                    <font>
+                        <Font name="Constantia" size="16.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="newLoginButton" text="Sign Up" onAction="#newLogin">
+                    <font>
+                        <Font name="Constantia" size="16.0"/>
+                    </font>
+                </Button>
+                <TextField fx:id="username" alignment="CENTER" visible="false" prefHeight="51.0" prefWidth="64.0" promptText="Username"/>
+                <TextField fx:id="password" alignment="CENTER" visible="false" prefHeight="51.0" prefWidth="64.0" promptText="Password"/>
+                <TextField fx:id="reenterPassword" alignment="CENTER" visible="false" prefWidth="64.0" prefHeight="51.0" promptText="Re-Enter Password"/>
+                <Button fx:id="enter" text="Enter" visible="false" onAction="#enterCredentials">
+                    <font>
+                        <Font name="Constantia" size="16.0"/>
+                    </font>
+                </Button>
+                <Label fx:id="error" text="Error" visible="false" style="-fx-text-fill: #ea4621">
+                    <font>
+                        <Font name="Constantia" size="12.0"/>
+                    </font>
+                </Label>
+            </children>
+        </VBox>
+        <VBox fx:id="menu" visible="false">
+            <children>
+                <VBox>
+                    <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20" visible="true">
+                            <children>
+                                <Button fx:id="submit" text="Submit Review" onAction="#submitReview">
+                                    <font>
+                                        <Font name="Constantia" size="16.0"/>
+                                    </font>
+                                </Button>
+                                <Button fx:id="view" text="See Reviews" onAction="#viewReviews">
+                                    <font>
+                                        <Font name="Constantia" size="16.0"/>
+                                    </font>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <Label fx:id="courseLabel" visible="false" text="Enter Course Mnemonic and Course Number. Example: CS 3140" style="-fx-text-fill: #eeeee4">
+                            <font>
+                                <Font name="Constantia" size="12.0"/>
+                            </font>
+                        </Label>
+                        <TextField fx:id="course" alignment="CENTER" visible="false"/>
+                        <Button fx:id="courseSubmit" visible="false" text="Enter" onAction="#handleEnterCourse">
+                            <font>
+                                <Font name="Constantia" size="16.0"/>
+                            </font>
+                        </Button>
+                        <Label fx:id="invalidCourse" visible="false" text="Invalid Course" style="-fx-text-fill: #ea4621"/>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+        <VBox fx:id="reviews" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20" visible="false">
+            <children>
+                <Label fx:id="courseMenuLabel" visible="false" style="-fx-text-fill: #189AB4">
+                    <font>
+                        <Font name="Constantia" size="25.0"/>
+                    </font>
+                </Label>
+                <Label text="Enter Message" style="-fx-text-fill: #eeeee4">
+                    <font>
+                        <Font name="Constantia" size="16.0"/>
+                    </font>
+                </Label>
+                <TextField fx:id="review" alignment="CENTER"/>
+                <Label text="Rate the Course 1-5" style="-fx-text-fill: #EEEEE4">
+                    <font>
+                        <Font name="Constantia" size="16.0"/>
+                    </font>
+                </Label>
+                <ComboBox fx:id="ratingsCombo" promptText="Rating"/>
+                <Button fx:id="submitReview" text="Submit" style="-fx-background-color: #189AB4" onAction="#addReview">
+                    <font>
+                        <Font name="Constantia" size="16.0"/>
+                    </font>
+                </Button>
+                <Label fx:id="ratingError" style="-fx-text-fill: #ea4621" visible="false">
+                    <font>
+                        <Font name="Constantia" size="16.0"/>
+                    </font>
+                </Label>
+            </children>
+        </VBox>
+        <VBox fx:id="viewReviews" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20" visible="false">
+            <children>
+                <Button fx:id="returnMainMenu" onAction="#returnMainMenu" text="Main Menu">
+                    <font>
+                        <Font name="Constantia" size="16.0"/>
+                    </font>
+                </Button>
+                <Label fx:id="courseMenuLabel" visible="false" style="-fx-text-fill: #189AB4">
+                    <font>
+                        <Font name="Constantia" size="25.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="reviewsList" style="-fx-text-fill: #EEEEE4" wrapText="true">
+                    <font>
+                        <Font name="Constantia" size="16.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="reviewMessage" style="-fx-text-fill: #EEEEE4" wrapText="true">
+                    <font>
+                        <Font name="Constantia" size="16.0"/>
+                    </font>
+                </Label>
+
+            </children>
+        </VBox>
+    </children>
+</VBox>
